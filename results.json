@@ -1,0 +1,145 @@
+{
+ "stats": {
+  "shallow": {
+   "drawn": 300,
+   "fetched": 299,
+   "distinct": 63,
+   "retention": 0.21070234113712374,
+   "fetch_fail": 0.0033333333333333335,
+   "active": 9,
+   "active_rate": 0.14285714285714285,
+   "program": {
+    "active": 9,
+    "planned": 2,
+    "upstream": 8,
+    "none-stated": 18,
+    "unstated": 26
+   },
+   "verdict_active": {
+    "direct": 1,
+    "direct-with-identity": 0,
+    "crypto-no-address": 2,
+    "crypto-with-identity": 1,
+    "platform": 2,
+    "no-bounty": 0,
+    "unclear": 3
+   },
+   "direct_any": 1
+  },
+  "deep": {
+   "drawn": 174,
+   "fetched": 174,
+   "distinct": 4,
+   "retention": 0.022988505747126436,
+   "fetch_fail": 0.0,
+   "active": 0,
+   "active_rate": 0.0,
+   "program": {
+    "active": 0,
+    "planned": 0,
+    "upstream": 0,
+    "none-stated": 1,
+    "unstated": 3
+   },
+   "verdict_active": {
+    "direct": 0,
+    "direct-with-identity": 0,
+    "crypto-no-address": 0,
+    "crypto-with-identity": 0,
+    "platform": 0,
+    "no-bounty": 0,
+    "unclear": 0
+   },
+   "direct_any": 0
+  },
+  "b_shallow": {
+   "drawn": 300,
+   "fetched": 298,
+   "distinct": 178,
+   "retention": 0.5973154362416108,
+   "fetch_fail": 0.006666666666666667,
+   "active": 41,
+   "active_rate": 0.2303370786516854,
+   "program": {
+    "active": 41,
+    "planned": 8,
+    "upstream": 2,
+    "none-stated": 52,
+    "unstated": 75
+   },
+   "verdict_active": {
+    "direct": 1,
+    "direct-with-identity": 0,
+    "crypto-no-address": 3,
+    "crypto-with-identity": 1,
+    "platform": 20,
+    "no-bounty": 0,
+    "unclear": 16
+   },
+   "direct_any": 1
+  },
+  "b_deep": {
+   "drawn": 300,
+   "fetched": 300,
+   "distinct": 11,
+   "retention": 0.03666666666666667,
+   "fetch_fail": 0.0,
+   "active": 3,
+   "active_rate": 0.2727272727272727,
+   "program": {
+    "active": 3,
+    "planned": 1,
+    "upstream": 0,
+    "none-stated": 3,
+    "unstated": 4
+   },
+   "verdict_active": {
+    "direct": 0,
+    "direct-with-identity": 0,
+    "crypto-no-address": 0,
+    "crypto-with-identity": 0,
+    "platform": 3,
+    "no-bounty": 0,
+    "unclear": 0
+   },
+   "direct_any": 0
+  }
+ },
+ "instrument": {
+  "fetched": 1256,
+  "distinct": 879,
+  "active": 163
+ },
+ "published": {
+  "fetched": 1256,
+  "distinct": 879,
+  "active": 163
+ },
+ "mde": {
+  "A": 0.0,
+  "B": 0.0
+ },
+ "test": {
+  "A": {
+   "z": 0.812464474403335,
+   "p": 0.41652516340525797
+  },
+  "B": {
+   "z": -0.3228436965836306,
+   "p": 0.7468136183577706
+  }
+ },
+ "overlap": 27,
+ "disagree": [],
+ "fired": [
+  "primary: deep below 5% -- effect larger than predicted",
+  "replication: arm pair B does not replicate",
+  "sanity: shallow retention 21.1% outside 60-80%",
+  "sanity: deep retention 2.3% outside 60-80%",
+  "sanity: b_shallow retention 59.7% outside 60-80%",
+  "sanity: b_deep retention 3.7% outside 60-80%",
+  "throw-out: shallow fetch-fail 0.3% / distinct 63",
+  "throw-out: deep fetch-fail 0.0% / distinct 4",
+  "throw-out: b_deep fetch-fail 0.0% / distinct 11"
+ ]
+}

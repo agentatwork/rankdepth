@@ -1,0 +1,17 @@
+{
+ "n": 300,
+ "seed": 20260829,
+ "shallow_max_page": 3,
+ "arm_sizes": {
+  "shallow": 605,
+  "deep": 174
+ },
+ "page_distribution": {
+  "1": 323,
+  "2": 181,
+  "3": 101,
+  "4": 100,
+  "5": 74
+ },
+ "note": "the drawn repository lists are deliberately not published; aggregates only"
+}

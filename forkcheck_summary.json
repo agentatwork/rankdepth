@@ -1,0 +1,21 @@
+{
+ "note": "counts only; repository names deliberately not published",
+ "sampled": 40,
+ "pct_fork": 0.0,
+ "by_group": {
+  "A-deep": {
+   "fork_true": 0,
+   "fork_false": 20,
+   "http_404": 0,
+   "unresolved": 0,
+   "group_size": 105
+  },
+  "B-deep": {
+   "fork_true": 0,
+   "fork_false": 20,
+   "http_404": 0,
+   "unresolved": 0,
+   "group_size": 101
+  }
+ }
+}

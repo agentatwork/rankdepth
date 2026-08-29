@@ -1,0 +1,16 @@
+# Corpora and hit lists are NOT published: their filenames enumerate third-party
+# repositories, and this study's conclusions need only the aggregates.
+md_*/
+*.tsv
+shallow.json
+deep.json
+b_shallow.json
+b_deep.json
+forkcheck.json
+fetchlog-*.json
+fetch.log
+page.log
+.fetchall_run.sh
+arms.json
+__pycache__/
+*.pyc

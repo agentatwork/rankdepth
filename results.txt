@@ -1,0 +1,72 @@
+instrument control: classify.py over directpay's own corpus -> 1256/879/163 (published 1256/879/163) -- unchanged
+==============================================================================
+ARM SIZES AND OUTCOMES
+==============================================================================
+arm          drawn  fetched  distinct  retain  active    rate  95% CI
+shallow        300      299        63   21.1%       9  14.29%   7.70-24.97%
+deep           174      174         4    2.3%       0   0.00%   0.00-48.99%
+b_shallow      300      298       178   59.7%      41  23.03%  17.46-29.75%
+b_deep         300      300        11    3.7%       3  27.27%   9.75-56.56%
+
+program breakdown (distinct policies)
+arm               active      planned     upstream  none-stated     unstated
+shallow                9            2            8           18           26
+deep                   0            0            0            1            3
+b_shallow             41            8            2           52           75
+b_deep                 3            1            0            3            4
+
+how the active programs would pay (raw counts -- NOT tested, see DEPTHPREREG 'Power')
+arm               direct  direct-with  crypto-no-a  crypto-with     platform    no-bounty      unclear
+shallow                1            0            2            1            2            0            3
+deep                   0            0            0            0            0            0            0
+b_shallow              1            0            3            1           20            0           16
+b_deep                 0            0            0            0            3            0            0
+
+cross-corpus consistency: 27 repos classified in two arms, 0 disagreements
+
+==============================================================================
+PRE-REGISTERED BOUNDS
+==============================================================================
+
+MDE recomputed at observed rates (pre-registration assumed p1=18.5%):
+  arm pair A: p1=14.29% observed, n=63/4 -> detectable down to 0.00% (drop 14.29 pts)
+  arm pair B: p1=23.03% observed, n=178/11 -> detectable down to 0.00% (drop 23.03 pts)
+
+arm pair A (directpay's queries): 14.29% -> 0.00%  z=0.81  p=0.4165
+arm pair B (pvrsweep queries)   : 23.03% -> 27.27%  z=-0.32  p=0.7468
+
+[secondary] shallow-arm active rate in 14-23%?
+  14.29% -- inside. The primary may be read against directpay's published 18.5%.
+
+[primary] deep-arm active rate vs shallow, arm pair A
+  0.00% -- BELOW the predicted 5-15% band, on the low side. The effect is larger than the PVR one; directpay's headline rate is roughly double the population rate.
+  detectable at this n down to 0.00%; observed deep 0.00% -- the drop clears the MDE
+
+[replication] arm pair B: is deep lower by more than the MDE?
+  27.27% vs 23.03%, delta +4.24 pts -- does NOT clear the MDE (23.03 pts). Pre-registered: if A shows a gradient and B does not, the effect is a property of directpay's eight queries rather than of ranking.
+
+[sanity] distinct-policy retention in 60-80%?
+  shallow      21.1%  OUTSIDE
+  deep          2.3%  OUTSIDE
+  b_shallow    59.7%  OUTSIDE
+  b_deep        3.7%  OUTSIDE
+
+[throw-out] fetch failure rate under 10%, and >=150 usable per arm?
+  shallow     fetch-fail   0.3%  distinct   63  THROW OUT
+  deep        fetch-fail   0.0%  distinct    4  THROW OUT
+  b_shallow   fetch-fail   0.7%  distinct  178  ok
+  b_deep      fetch-fail   0.0%  distinct   11  THROW OUT
+
+==============================================================================
+9 PRE-REGISTERED RULE(S) FIRED -- the write-up is not free to ignore these:
+  * primary: deep below 5% -- effect larger than predicted
+  * replication: arm pair B does not replicate
+  * sanity: shallow retention 21.1% outside 60-80%
+  * sanity: deep retention 2.3% outside 60-80%
+  * sanity: b_shallow retention 59.7% outside 60-80%
+  * sanity: b_deep retention 3.7% outside 60-80%
+  * throw-out: shallow fetch-fail 0.3% / distinct 63
+  * throw-out: deep fetch-fail 0.0% / distinct 4
+  * throw-out: b_deep fetch-fail 0.0% / distinct 11
+
+Halting non-zero. Each of these changes what the write-up may claim; that is a decision to make deliberately, not a warning to scroll past.
