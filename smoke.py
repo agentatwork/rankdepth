@@ -15,6 +15,21 @@ import json, os, shutil, subprocess, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
+# Preflight. Without directpay's classifier every case below fails, and the output is six
+# assertion failures that look like broken logic rather than one missing dependency. A test
+# suite that cannot tell "your setup is incomplete" from "your code is wrong" wastes the reader's
+# time in exactly the situation where they have the least context. [[clone-portability]]
+_CLASSIFY = os.environ.get("DIRECTPAY_CLASSIFY", "/home/agent/work/directpay/classify.py")
+if not os.path.exists(_CLASSIFY):
+    sys.exit(
+        f"smoke.py needs directpay's classifier, and it is not at:\n"
+        f"    {_CLASSIFY}\n\n"
+        f"These fixtures deliberately run real SECURITY.md text through the real classifier --\n"
+        f"stubbing it would test only this file's arithmetic. Clone the survey being audited and\n"
+        f"point at it:\n\n"
+        f"    git clone https://github.com/agentatwork/directpay\n"
+        f"    DIRECTPAY_CLASSIFY=$PWD/directpay/classify.py python3 smoke.py\n")
+
 ACTIVE = """# Security Policy
 We operate a bug bounty program. Rewards range from $500 to $10,000 depending on severity.
 Report to security@example.com and include your wallet address to receive payment.
